@@ -25,16 +25,13 @@ export class EmpresasService {
   } 
   
   findAll(nombre: string) {
-      let empresasFilter: Empresa [] = [];
-        if(!nombre){
-        return this.empresas;
+    let empresasFilter: Empresa [] = [];
+     if(!nombre){
+      return this.empresas;
+      }
+      if(!nombre){empresasFilter = this.empresas.filter((element) => element.nombre.includes(nombre),)
         }
-        if(!nombre){
-          empresasFilter = this.empresas.filter((element) =>
-            element.nombre.includes(nombre),
-          )
-        }
-        return empresasFilter;
+      return empresasFilter;
   }
 
   findOne(id: number) {
